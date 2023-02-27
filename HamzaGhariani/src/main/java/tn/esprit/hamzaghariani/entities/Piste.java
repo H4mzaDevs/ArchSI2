@@ -1,10 +1,10 @@
-package tn.esprit.ProjetSpringBoot.Entities;
-
+package tn.esprit.hamzaghariani.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -13,6 +13,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Table ( name = "Piste" )
 public class Piste implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column( name = "idPiste" )
@@ -23,4 +24,7 @@ public class Piste implements Serializable {
     private Couleur couleur;
     private  Integer longeur;
     private Integer pente;
+    // Biderectionelle Relation *-* avec skieur
+    @ManyToMany(cascade = CascadeType.ALL)
+    private Set<Skieur> skieurs;
 }

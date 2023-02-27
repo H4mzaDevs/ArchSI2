@@ -1,5 +1,4 @@
-package tn.esprit.ProjetSpringBoot.Entities;
-
+package tn.esprit.hamzaghariani.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -17,6 +16,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Table( name = "Abonnement" )
 public class Abonnement implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column( name = "idAbonnement" )
@@ -27,5 +27,4 @@ public class Abonnement implements Serializable {
     private  Float prixAbonnement;
     @Enumerated(EnumType.STRING)
     private TypeAbonnement typeAbon;
-
 }

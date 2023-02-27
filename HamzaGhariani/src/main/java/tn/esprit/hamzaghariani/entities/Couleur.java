@@ -1,4 +1,4 @@
-package tn.esprit.ProjetSpringBoot.Entities;
+package tn.esprit.hamzaghariani.entities;
 
 public enum Couleur {
     VERT,BLEU,ROUGE,NOIR
